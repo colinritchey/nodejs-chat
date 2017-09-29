@@ -9,7 +9,11 @@ function ChatUI(socket){
 ChatUI.prototype.getUserInput = function(){
   let val = document.querySelector('input').value;
   this.chat.sendMessage(val);
-  return val;
+
+  let element = document.createElement('li');
+  let parent = document.getElementById('#msg-list');
+  element.innerText = val;
+  parent.append(innerText);
 }
 
 ChatUI.prototype.emitMessage = function(message){
